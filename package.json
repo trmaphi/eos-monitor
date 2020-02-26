@@ -1,0 +1,29 @@
+{
+  "name": "eos-mon",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "author": "Truong Ma Phi",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/joi": "17.1.0",
+    "demux-eos": "5.0.4-441",
+    "module-alias": "2.2.2"
+  },
+  "devDependencies": {
+    "@types/bunyan": "1.8.6",
+    "@types/hapi__joi": "^16.0.12",
+    "@types/massive": "5.4.3",
+    "dotenv": "8.2.0",
+    "typescript": "3.7.5"
+  },
+  "_moduleAliases": {
+    "demux": "node_modules/demux-eos/node_modules/demux",
+    "demux-postgres": "node_modules/demux-eos/node_modules/demux-postgres",
+    "massive": "node_modules/demux-eos/node_modules/massive"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/tsc",
+    "start": "node -r dotenv/config dist/index.js | ./node_modules/.bin/bunyan",
+    "start:prod": "node dist/index.js"
+  }
+}
