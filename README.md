@@ -22,9 +22,9 @@ Container approach
 # Copy .env.example to .env, remember to edit your .env
 cp .env.example .env
 # Build image for run local
-docker build --rm -f Dockerfile -t eos-monitor:demo .
+docker build -rm --file Dockerfile --tag eos-monitor:demo .
 # Run container from built image
-docker container run --rm --env-file .env --name demo eos-monitor:demo
+docker container run --rm --tty --env-file .env --name demo eos-monitor:demo
 ```
 
 Example output of running with `debug` LOG_LEVEL
